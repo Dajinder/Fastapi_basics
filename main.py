@@ -82,7 +82,7 @@ def create_new_student(student_id: int, student: stdent):
 
 
 # put method - to update the data
-@app.put("/update_student{student_id}")
+@app.put("/update_student/{student_id}")
 def update_student_details(student_id: int, student: update_student):
     if student_id not in students:
         return {"Error":"Student does not exist"}
@@ -105,7 +105,7 @@ def update_student_details(student_id: int, student: update_student):
     return students[student_id]
 
 # delete student id
-@app.delete("/delete_student{student_id}")
+@app.delete("/delete_student/{student_id}")
 def delete_student(student_id: int):
     if student_id not in students:
         return {"Error":"Student does not exist"}
